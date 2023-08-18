@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./modules.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            align-items: center;
+        }
+
+        h1 {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        #view1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .block {
+            box-sizing: border-box;
+            border: 2px solid #555;
+            width: calc(100% / 3);
+            padding: 40px 20px;
+            margin: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+
+        .block:hover {
+            background-color: #444;
+            color: #fff;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>Flexible Grid of 12 Blocks!</h1>
+    </nav>
+    <main>
+        <div class="view" id="view1">
+            <div class="block">1</div>
+            <div class="block">2</div>
+            <div class="block">3</div>
+            <div class="block">4</div>
+            <div class="block">5</div>
+            <div class="block">6</div>
+            <div class="block">7</div>
+            <div class="block">8</div>
+            <div class="block">9</div>
+            <div class="block">10</div>
+            <div class="block">11</div>
+            <div class="block">12</div>
+        </div>
+    </main>
+</body>
+</html>

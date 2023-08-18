@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./eventListener.js"></script>
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            align-items: center;
+        }
+
+        nav h1 {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+        }
+
+        #view2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .block {
+            box-sizing: border-box;
+            border: 2px solid #555;
+            width: 400px;
+            height: 400px;
+            padding: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            margin-top: 45px;
+        }
+        .blue {
+            box-sizing: border-box;
+            border: 2px solid #555;
+            width: 400px;
+            height: 400px;
+            padding: 40px;
+            background-color: #0049f2;
+            color: #f9f9f9;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            margin-top: 45px;
+        }
+
+        .block .iter {
+            box-sizing: border-box;
+            border: 2px solid #555;
+            width: 315px;
+            height: 285px;
+            padding: 40px;
+            background-color: #333;
+            color: #f9f9f9;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+
+        .block:hover {
+            background-color: #444;
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .block .iter:hover{
+            background-color: #fff;
+            color:#444;
+            transform: scale(1.05);
+        }
+        .darkblue{
+            background-color: darkblue;
+        }
+        .purple{
+            background-color: purple;
+        }
+        .height100{
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>My page</h1>
+    </nav>
+    <main>
+        <div id="view1" class="view"></div>
+        <div class="view darkblue" id="view2">
+            <div class="block">
+                <h2 class="iter">My Second View</h2>
+            </div>
+        </div>
+        <div id="view3" class="view"></div>
+    </main>
+</body>
+
+</html>

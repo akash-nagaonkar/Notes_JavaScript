@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./main.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .flexCenter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        html,
+        body {
+            width: 100vw;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phoneFormat {
+            display: flex;
+            text-align: center;
+            font-size: 0.75rem;
+        }
+
+        @media only screen and (min-width) {
+
+            html,
+            body {
+                font-size: 44px;
+            }
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        input {
+            font-size: 1rem;
+            text-align: center;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            width: 90vw;
+            letter-spacing: 5px;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        input:hover,
+        input:focus {
+            box-shadow: 2px 2px 10px #424242;
+        }
+
+        @media only screen and (min-width) {
+            input {
+                width: 50vw;
+            }
+        }
+
+        label {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .invalid {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <main class="flexCenter">
+        <section class="phoneView flexCenter">
+            <form id="phoneForm" class="phoneForm flexCenter">
+                <label for="phoneNum">Please enter your phone number</label>
+                <input type="text" id="phoneNum" class="phoneNum" autocomplete="off" />
+                <p class="phoneFormat">
+                    Examples: (555)555-555 or 123-456-7899
+                </p>
+            </form>
+        </section>
+        <section class="textView flexCenter">
+            <form id="textForm" class="textForm flexCenter">
+                <label for="textEntry">Please enter your phone number</label>
+                <input type="text" id="textEntry" class="textEntry" autocomplete="off" />
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
