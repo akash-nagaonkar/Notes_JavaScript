@@ -43,3 +43,7 @@ console.log(Number.isNaN("akash"));
 
 // global isNaN() ==> Determines whether a value is NaN or not
 console.log(isNaN("akash"));
+
+// for conversion of indian format of showing currency value
+const num = 1000000
+console.log(num.toLocaleString('en-IN'));
