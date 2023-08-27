@@ -107,7 +107,7 @@ element.textContent = "New text content";
 
 - Keep in mind the following:
 
-- Modifying the `textContent` property will only change the text content of the element itself and will not affect its child elements or their content.
+-- Modifying the `textContent` property will only change the text content of the element itself and will not affect its child elements or their content.
 - If the element contains HTML tags as text content, they will be treated as plain text and not rendered as HTML. To insert HTML content, you would use the `innerHTML` property instead.
 - When setting the `textContent`, any special characters will be escaped, ensuring that the text is treated as plain text and not interpreted as HTML.
 
