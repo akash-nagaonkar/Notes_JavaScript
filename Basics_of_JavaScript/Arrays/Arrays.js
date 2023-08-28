@@ -78,3 +78,33 @@ console.log("B", myArray); // B [ 1, 2, 3, 4, 5 ]
 const myNewAr2 = myArray.splice(1, 3);
 console.log("C", myArray); // C [ 1, 5 ]  --> Splice reomoves all the given index range from original array
 console.log(myNewAr2); // [ 2, 3, 4 ]
+
+const marvel_heroes = ["Captain America", "Ironman", "Hulk", "Thor"];
+const dc_heroes = ["Batman", "Superman", "Flash"];
+
+// This is not good way to combine  two arrays
+marvel_heroes.push(dc_heroes);
+console.log(marvel_heroes); // ['Captain America','Ironman','Hulk','Thor',[ 'Batman', 'Superman', 'Flash' ]]
+
+// There is another a method called concat that we can use it to combine two arrays in genuine way
+const ourAllHeroes = marvel_heroes.concat(dc_heroes);
+console.log(ourAllHeroes); // ['Captain America', 'Ironman', 'Hulk', 'Thor', 'Batman', 'Superman', 'Flash']
+
+// There is a another method we can use and that is spread operator --> it used widely used method in frameworks such as React Js
+const allNewHeroes = [...marvel_heroes, ...dc_heroes];
+console.log(allNewHeroes); // ['Captain America', 'Ironman', 'Hulk', 'Thor', 'Batman', 'Superman', 'Flash']
+
+// Flat method
+const anotherArray = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]];
+const real_another_array = anotherArray.flat(Infinity);
+console.log(real_another_array); // [1, 2, 3, 4, 5, 6, 7, 6, 7, 4, 5]
+
+// isArray, from, of methods
+console.log(Array.isArray(["Hitesh"])); // true
+console.log(Array.from("Hitesh")); // [ 'H', 'i', 't', 'e', 's', 'h' ]
+console.log(Array.from({ name: "Akash" })); // [] --> interesting - it is giving an empty array
+
+let score1 = 100;
+let score2 = 200;
+let score3 = 300;
+console.log(Array.of(score1, score2, score3)); // [ 100, 200, 300 ]
