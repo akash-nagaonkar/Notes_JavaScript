@@ -179,3 +179,15 @@ console.log(Object.keys(tinderUser)); // [ 'id', 'name', 'isLoggedIn' ]
 console.log(Object.values(tinderUser)); // [ '123abc', 'Sam', false ]
 console.log(Object.entries(tinderUser)); // [ [ 'id', '123abc' ], [ 'name', 'Sam' ], [ 'isLoggedIn', false ] ]
 console.log(tinderUser.hasOwnProperty("isLoggedIn")); // true
+
+const course = {
+  name: "Chai Aur JavaScript",
+  price: "999",
+  courseInstructor: "Hitest",
+};
+
+// Object Destructuring
+const { courseInstructor, price, name: courseName } = course;
+console.log(courseName); // Chai Aur JavaScript
+console.log(courseInstructor); // Hitest
+console.log(price); // 999
