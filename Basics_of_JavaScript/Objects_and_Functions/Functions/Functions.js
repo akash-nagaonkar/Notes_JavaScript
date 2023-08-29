@@ -20,6 +20,14 @@ const toProperCase = (name) => {
 };
 console.log(toProperCase("aKASh"));
 
+// Implicit return Arrow function is the function where we do not use 'return', vice-versa is the explicit
+const addThree = (a, b, c) => a + b + c;
+console.log(addThree(3, 5, 18));
+
+// Returning a Object
+const returnObj = () => ({username: "Akash"})
+console.log(returnObj());
+
 // Functions and parameter in Js
 function addTwoNumbers(a, b) {
   return a + b;
