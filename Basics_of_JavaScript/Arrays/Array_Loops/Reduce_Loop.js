@@ -72,4 +72,4 @@ const priceToPay = shoppingCart.reduce((accumulator, item) => {
   return accumulator + item.price;
 }, 0);
 
-console.log(`You have to pay ${priceToPay}rs`); //You have to pay 6598
+console.log(`You have to pay ${priceToPay}rs`); //You have to pay 6598rs
