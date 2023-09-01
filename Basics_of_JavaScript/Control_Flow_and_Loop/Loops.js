@@ -22,7 +22,7 @@ for (let i = 1; i <= 10; i++) {
 }
 
 console.log("Each letter of my name is separted");
-let myName = "Akash"
+let myName = "Akash";
 for (let i = 0; i <= myName.length; i++) {
   console.log(myName.charAt(i));
 }
