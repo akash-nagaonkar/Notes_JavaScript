@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM_Learning</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul class="language">
+      <li>JavaScript</li>
+    </ul>
+  </body>
+  <script>
+    //  Edit and Remove elements in DOM
+
+    // How to add another List Item?
+
+    // Basic approach to add list value --> The problem with this is that the trees is being traversed from start to end whenever we run the function.
+    const addLanguage = (name) => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = name;
+      document.querySelector(".language").appendChild(listItem);
+    };
+    addLanguage("Python");
+    addLanguage("Java");
+
+    // Optimized approach --> This is an approachable way to add language, it has solved the above problem
+    const addLang = (name) => {
+      const listItem = document.createElement("li");
+      listItem.appendChild(document.createTextNode(name));
+      document.querySelector(".language").appendChild(listItem);
+    };
+    addLang("C++");
+
+    // Edit value
+    const secondLang = document.querySelector("li:nth-child(2)");
+
+    // Unoptimized way
+    secondLang.innerHTML = "TypeScript";
+
+    // Optimized way
+    const replaceSecondLi = document.createElement("li");
+    replaceSecondLi.textContent = "TypeScript";
+    secondLang.replaceWith(replaceSecondLi);
+
+    // Anotther approach
+    const firstLang = document.querySelector("li:nth-child(3)");
+    firstLang.outerHTML = `<li>Rubby</li>`;
+
+
+    // Remove value
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+  </script>
+</html>

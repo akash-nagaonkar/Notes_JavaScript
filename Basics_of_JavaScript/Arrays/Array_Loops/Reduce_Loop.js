@@ -52,7 +52,7 @@ Accumulator: 6 and Current Value: 4. Output: 6 + 4 = 10
 ---> 10
 */
 
-// Reduce loop is used to make fuctionality of shopping cards, in most cases shopping applications
+// Reduce loop is used to make fuctionality of shopping cards, in most cases e-commerce applications
 const shoppingCart = [
   {
     courseTitle: "Master JavaScript",
