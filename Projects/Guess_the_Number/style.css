@@ -49,14 +49,10 @@ body {
 
 h1 {
   color: #2c2b2b;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 1000;
   margin-bottom: 10px;
-  background: linear-gradient(
-    135deg,
-    #007bffda,
-    #5bc0deda
-  ); /* Gradient background */
+  background: linear-gradient(135deg, #007bffda, #5bc0deda);
   padding: 15px;
   letter-spacing: 5px;
 }
@@ -93,13 +89,8 @@ input.guessField {
 }
 
 input.guessSubmit {
-  background: linear-gradient(
-    to right,
-    rgba(0, 89, 255, 0.783),
-    #01ecfde9,
-    rgba(0, 89, 255, 0.783)
-  );
-  color: black;
+  background: linear-gradient(to right, #3498db, #2980b9);
+  color: #fff;
   border: none;
   padding: 10px 20px;
   font-size: 20px;
@@ -112,8 +103,7 @@ input.guessSubmit {
 }
 
 input.guessSubmit:hover {
-  background: linear-gradient(to right, #00d0ffd7, #0101fd, rgb(1, 255, 242));
-  color: white;
+  background: linear-gradient(to bottom, #2980b9, #3498db);
 }
 
 .resultParas {
@@ -139,7 +129,13 @@ input.guessSubmit:hover {
 /* Style for display messages */
 .lowOrHi {
   font-weight: bold;
-  color: #07495d;
+  color: #075d77;
+  font-size: 3cqmin;
+  margin-top: 10px;
+}
+.validate {
+  font-weight: bold;
+  color: #b30707;
   font-size: 3cqmin;
   margin-top: 10px;
 }
@@ -152,6 +148,15 @@ input.guessSubmit:hover {
 .correct {
   font-weight: bold;
   color: #008300;
+  font-size: 25px;
+  margin-top: 10px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.attemptC {
+  font-weight: bold;
+  color: red;
   font-size: 25px;
   margin-top: 10px;
   font-size: 40px;
@@ -173,26 +178,20 @@ input.guessSubmit:hover {
 }
 
 .gameOver button {
-  width: 50%;
-  background: linear-gradient(
-    to right,
-    rgba(0, 89, 255, 0.783),
-    #01ecfde9,
-    rgba(0, 89, 255, 0.783)
-  );
-  color: black;
+  width: 40%;
+  background: linear-gradient(to right, #4caf50, #388e3c);
+  color: #fff;
   border: none;
   padding: 10px;
   font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
 }
 
 .gameOver button:hover {
-  background: linear-gradient(to right, #00d0ffd7, #0101fd, rgb(1, 115, 255));
-  color: white;
+  background: linear-gradient(to bottom, #388e3c, #4caf50);
 }
 
 /* Responsive design for smaller screens */

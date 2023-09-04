@@ -31,14 +31,14 @@ if (playGame) {
 // Validate Guess
 const validateGuess = (guess) => {
   if (isNaN(guess)) {
-    alert("Please enter a valid number");
+    displayMessage("Please enter a valid number", "validate");
   } else if (guess < 1 || guess > 100) {
-    alert("Number should be more than 1 and less than 100");
+    displayMessage("Number should be more than 1 and less than 100", "validate");
   } else {
     prevGuess.push(guess);
-    if (numGuesses === 11) {
+    if (numGuesses === 10) {
       displayGuess(guess);
-      displayMessage(`Game Over. Random number was ${randomNumber}`);
+      displayMessage(`Game Over! Random number was ${randomNumber}`, "attemptC");
       endGame();
     } else {
       displayGuess(guess);
@@ -50,12 +50,12 @@ const validateGuess = (guess) => {
 // Check guess
 const checkGuess = (guess) => {
   if (guess === randomNumber) {
-    displayMessage("You guessed it right!🎉", "correct"); // Use the "correct" class
+    displayMessage("🏆You guessed it right🏆", "correct"); // Use the "correct" class
     endGame();
   } else if (guess < randomNumber) {
-    displayMessage("The number you guessed is low", "lowOrHi"); // Use the "lowOrHi" class
+    displayMessage("The number you guessed is too low", "lowOrHi"); // Use the "lowOrHi" class
   } else if (guess > randomNumber) {
-    displayMessage("The number you guessed is high", "lowOrHi"); // Use the "lowOrHi" class
+    displayMessage("The number you guessed is too high", "lowOrHi"); // Use the "lowOrHi" class
   }
 };
 
