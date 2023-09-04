@@ -11,7 +11,7 @@ const gameOverMessage = document.querySelector(".gameOver");
 const restartButton = document.getElementById("restartButton");
 
 // Creating paragraph
-const div = document.createElement("div");
+const gameOverDiv = document.querySelector(".gameOver");
 
 // Variables
 let prevGuess = [];
@@ -50,7 +50,7 @@ const validateGuess = (guess) => {
 // Check guess
 const checkGuess = (guess) => {
   if (guess === randomNumber) {
-    displayMessage("You guessed it right!", "correct"); // Use the "correct" class
+    displayMessage("You guessed it right!🎉", "correct"); // Use the "correct" class
     endGame();
   } else if (guess < randomNumber) {
     displayMessage("The number you guessed is low", "lowOrHi"); // Use the "lowOrHi" class
@@ -86,12 +86,9 @@ const endGame = () => {
   userInput.value = "";
   userInput.setAttribute("disabled", "");
   submit.setAttribute("disabled", ""); // Disable the submit button
-  div.classList.add("button");
-  div.innerHTML = `<div class="gameOver">
-      <h2 id="newGame">Game Over</h2>
-      <button id="restartButton" class="button">Start Again</button>
-    </div>`;
-  startOver.appendChild(div);
+  gameOverDiv.classList.add("button");
+  gameOverDiv.style.display = "flex";
+  startOver.appendChild(gameOverDiv);
   gameOverMessage.style.display = "block"; // Show game over message
   playGame = false;
 };
