@@ -26,9 +26,9 @@ body {
   position: relative;
   background: linear-gradient(
     to right,
-    #ffdd00b8,
-    #c7f303a3,
-    rgba(109, 233, 27, 0.69)
+    #ffdd00,
+    #c7f303ae,
+    rgba(109, 233, 27, 0.698)
   );
 }
 

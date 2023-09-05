@@ -1,29 +1,26 @@
 // Constants
-const randomNumber = parseInt(Math.random() * 100 + 1);
-console.log(randomNumber);
 const submit = document.querySelector("#subt");
 const userInput = document.querySelector("#guessField");
 const guessSlot = document.querySelector(".guesses");
 const remaining = document.querySelector(".lastResult");
 const lowOrHigh = document.querySelector(".lowOrHi");
 const startOver = document.querySelector(".resultParas");
-const gameOverMessage = document.querySelector(".gameOver");
 const restartButton = document.getElementById("restartButton");
-
-// Creating paragraph
 const gameOverDiv = document.querySelector(".gameOver");
+
+// Generating a random number
+const randomNumber = parseInt(Math.random() * 100 + 1);
 
 // Variables
 let prevGuess = [];
 let numGuesses = 1;
 let playGame = true;
 
-// Fuctionalities
+// Check whether user is available to play or not
 if (playGame) {
   submit.addEventListener("click", (e) => {
     e.preventDefault();
     const guess = parseInt(userInput.value);
-    console.log(guess);
     validateGuess(guess);
   });
 }
@@ -33,12 +30,18 @@ const validateGuess = (guess) => {
   if (isNaN(guess)) {
     displayMessage("Please enter a valid number", "validate");
   } else if (guess < 1 || guess > 100) {
-    displayMessage("Number should be more than 1 and less than 100", "validate");
+    displayMessage(
+      "Number should be more than 1 and less than 100",
+      "validate"
+    );
   } else {
     prevGuess.push(guess);
     if (numGuesses === 10) {
       displayGuess(guess);
-      displayMessage(`Game Over! Random number was ${randomNumber}`, "attemptC");
+      displayMessage(
+        `Game Over! Random number was ${randomNumber}`,
+        "attemptC"
+      );
       endGame();
     } else {
       displayGuess(guess);
@@ -85,11 +88,9 @@ const displayMessage = (message, className) => {
 const endGame = () => {
   userInput.value = "";
   userInput.setAttribute("disabled", "");
-  submit.setAttribute("disabled", ""); // Disable the submit button
-  gameOverDiv.classList.add("button");
+  submit.setAttribute("disabled", "");
   gameOverDiv.style.display = "flex";
   startOver.appendChild(gameOverDiv);
-  gameOverMessage.style.display = "block"; // Show game over message
   playGame = false;
 };
 
