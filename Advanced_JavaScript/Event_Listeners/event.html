@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listeners</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue; margin: 40px">
+    <h2>Amazing image</h2>
+    <div>
+      <ul
+        id="images"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          list-style: none;
+        "
+      >
+        <li>
+          <img
+            width="250px"
+            id="photoshop"
+            src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="250px"
+            id="japan"
+            src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="250px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="250px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="250px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li style="margin-top: 40px">
+          <a
+            style="
+              color: aliceblue;
+              text-decoration: none;
+              background-color: skyblue;
+              padding: 10px;
+              border-radius: 8px;
+              color: black;
+            "
+            href="https://google.com"
+            id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // Event Listeners
+
+    // document.getElementById("owl").onclick = () => {
+    //   alert("This is owl")
+    // }
+
+    // attachEvent()
+    // jQuery - onEvent
+
+    // Best approach to use event listeners
+    document.getElementById("owl").addEventListener(
+      "click",
+      (e) => {
+        console.log(e);
+        /*
+    Important evnet listeners -> type, timeStamp, defaultPrevent, target, toElement, srcElement, 
+    currentTarget, clientX, clientY, altKey, ctrKey, shiftKey, keyCode  
+    */
+      },
+      false
+    );
+
+    // Event Propogation --> It includes two contexts Event bubbling and Event capturing
+
+    // When I click on the river image it will print "River Clicked" first and then move outside, print "Clicked inside the UL tag" when it is false. This inside out approach called event bubbling or event propogation
+    // When it a true then it will get reversed, gives outsode in approach falsethis called capturing mode
+    // There is a one method is used to stop propagation --> stopPropagation()
+    document.getElementById("images").addEventListener(
+      "click",
+      (e) => {
+        console.log("Clicked inside the UL tag");
+      },
+      false // Event propogation - capturing(true - outside-in) and bubbling(false - inside-out)
+    );
+
+    document.getElementById("river").addEventListener(
+      "click",
+      (e) => {
+        console.log("River Clicked");
+        e.stopPropagation(); // River Clicked --> Used to stop bubbling
+      },
+      false
+    );
+
+    document.getElementById("google").addEventListener("click", (e)=>{
+      e.preventDefault()
+      e.stopPropagation()
+      console.log("Google Clicked!");
+    }, false);
+
+    // To remove images
+    document.querySelector("#images").addEventListener(
+      "click",
+      (e) => {
+        console.log(e.target.parentNode);
+        if (e.target.tagName === "IMG") {
+          console.log(e.target.id);
+          let removeIt = e.target.parentNode;
+          removeIt.remove();
+          // removeIt.parentNode.removeChild(removeIt)
+        }
+      },
+      false
+    );
+  </script>
+</html>

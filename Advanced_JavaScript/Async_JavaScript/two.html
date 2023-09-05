@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Set Interval and Clear Interval</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    // Async
+    const sayDate = (name) => {
+      console.log(name, Date.now());
+    };
+
+    const interval = setInterval(sayDate, 1000, "Akash"); // We can pass parameter
+
+    document.querySelector("#stop").addEventListener("click", () => {
+      clearInterval(interval);
+      console.log("Stopped");
+    });
+
+    document.querySelector("#start").addEventListener("click", () => {
+      console.log("Started");
+    });
+  </script>
+</html>
