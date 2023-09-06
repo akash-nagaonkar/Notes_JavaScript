@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <div class="my-card">
+        <h1></h1>
+        <p class="id"></p>
+        <img src="" alt="image">
+    </div>
+  </body>
+  <script>
+    const request_url = "https://api.github.com/users/akash-nagaonkar";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", request_url);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        const name = document.querySelector('h1')
+        const id = document.querySelector(".id")
+        const photo = document.querySelector("img")
+        name.innerHTML = data.login
+        photo.src = data.avatar_url
+        id.innerHTML= data.id
+      }
+    };
+    xhr.send();
+  </script>
+</html>

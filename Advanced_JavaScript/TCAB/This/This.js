@@ -4,6 +4,9 @@ Value of this in global scope --> Window
 Value of this in function --> Window
 Value of this in method --> Object
 
+webAPI --> this = window
+node --> this = {}
+
 ** In any method this keyword refers to parent object **
 */
 
