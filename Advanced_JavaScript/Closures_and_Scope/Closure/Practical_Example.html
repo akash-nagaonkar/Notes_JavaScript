@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue; margin: 40px">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    // Practical explaination
+
+    /*
+    document.getElementById("orange").addEventListener("click", (e) => {
+      document.body.style.backgroundColor = "orange";
+    });
+    document.getElementById("green").addEventListener("click", (e) => {
+      document.body.style.backgroundColor = "green";
+    }); 
+    */
+
+    /*
+    const clickHandler = (color) => {
+      document.body.style.backgroundColor = `${color}`;
+    };
+
+    document
+      .getElementById("orange")
+      .addEventListener("click", clickHandler("orange"));
+    document
+      .getElementById("green")
+      .addEventListener("click", clickHandler("green"));
+    */
+
+    // Solving this above problem by using Closure
+    const clickHandler = (color) => {
+      return () => {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    };
+
+    document
+      .getElementById("orange")
+      .addEventListener("click", clickHandler("orange"));
+    document
+      .getElementById("green")
+      .addEventListener("click", clickHandler("green"));
+  </script>
+</html>
