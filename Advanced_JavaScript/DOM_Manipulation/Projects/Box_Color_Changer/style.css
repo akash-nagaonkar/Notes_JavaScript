@@ -18,8 +18,8 @@ body {
 }
 
 .center {
-  width: 80vw;
-  height: 80vh;
+  width: 90vw;
+  height: 90vh;
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -29,4 +29,29 @@ body {
 }
 .text {
   text-transform: uppercase;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #3498db, #1abc9c); /* Add background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+  animation: pulse 1s infinite alternate; /* Add pulsating animation */
+  filter: blur(0); /* Initial blur set to 0 */
+  transition: filter 0.2s ease; /* Transition for smooth blur change */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
 }
