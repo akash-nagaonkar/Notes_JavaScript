@@ -18,18 +18,25 @@
   width: 100%;
   max-width: 540px;
   background: #fff;
-  margin: 100px auto 20px;
-  padding: 40px 30px 70px;
+  margin: 70px auto 20px;
+  padding: 40px 30px 20px;
   border-radius: 10px;
   background: linear-gradient(to bottom, #3498db, #1abc9c);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
 }
 
 .todo .title {
+  text-transform: uppercase;
   color: #002765;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
+  font-size: 40px;
+  background: linear-gradient(to bottom, #003892, #a50145);
+  -webkit-background-clip: text; /* For webkit-based browsers */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .todo h2 img {
@@ -62,9 +69,14 @@ button {
   padding: 16px 50px;
   background: #ff5945;
   color: #fff;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 40px;
+  transition: background 0.3s ease; /* Add a smooth transition for background color change */
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #fc432e, #ff2a1e); /* Change the background color on hover */
 }
 
 ul li {
@@ -120,7 +132,7 @@ ul li span:hover{
 #message {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .error {
