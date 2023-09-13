@@ -103,9 +103,3 @@ const newGame = () => {
 
 // Event listener for the restart button
 restartButton.addEventListener("click", newGame);
-
-// create a function to display the high score
-const highScore = () => {
-  const highScore = document.querySelector(".highScore");
-  highScore.innerHTML = `High Score: ${localStorage.getItem("highScore")}`;
-};
